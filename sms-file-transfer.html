@@ -1,0 +1,92 @@
+<html><meta name="viewport" content="width=device-width, initial-scale=1.0"><body><style>body{font-family:Arial;line-height:1.4;padding:2em;background:#fed}#o,#i{width:100%}i{background-color:#7c7;padding:2px}</style><p>A</p><input type="file" onchange="a(this)"><input id="o"><hr><p>B</p><input id="i"><i onclick="b()">Ok</i><a id="x"></a>
+<script>
+/* atob('VGhpcyBpcyBhIHRlc3QgZmlsZS4gSWYgeW91IGNhbiBzZWUgdGhpcyB0aGVuIGNvbmdyYXRzIQ==') */
+// var names: x,y (for inputs), i,j (for loops), r (for return vars). a-o for function names and global vars, p-z for vars inside functions
+var c=x=>document.getElementById(x),
+d=x=>alert(x),
+e=a=>a.split(''),
+f=n=>m.log(n),
+g=(x,y=n)=>{
+  z=y.length;
+  p=m.ceil(f(x)/f(z)+0.1); // how many 'digits' does the output have
+  r='';
+  for(j=0; j<p; j++) // the decimal to base-n switcher
+    r=y[m.floor((x/(z**j))%z)]+r;
+  return r
+},
+h=(x,y=n)=>{
+  r=0;
+  for(j in x) // the base-n to decimal switcher
+    r+=y.indexOf(x[x.length-j-1])*(y.length**j);
+  return r
+},
+i,j,
+k=e(`abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789/=`),
+l=e(`@£$¥èéùìòÇØøÅåΔ_ΦΓΛΩΠΨΣΘΞÆæßÉ!"#¤%&'()*+,-./0123456789:;<=>?¡ABCDEFGHIJKLMNOPQRSTUVWXYZÄÖÑÜ§¿abcdefghijklmnopqrstuvwxyzä`),
+m=Math,
+n=e('àüñö'),
+p,q,r,s,
+v='@',/*charAssignedToVersion*/
+w=c('x'),
+x,y,z
+
+// input
+var a=x=>{
+// clear text field in OUT part
+if (x.files.length>1){d('1FileOnly')}else{
+p = x.files[0]
+// (new window.FileReader()).onload = q => {
+q=new window.FileReader()
+q.onload=y=>{
+s=y.target.result
+if (x.size>5000){d('TooBig')}else{
+  // compression algorithm
+  s=s
+
+  /*
+// Remove the `data:` part, aka the first 5 characters
+s=s.substr(5).split(';')
+
+// Splits the string into 2 from the comma
+// Replaces the following terms in the first string
+//   image/       -> im
+//   application/ -> ap
+s=(v+s[0].replace(/image\//,'im').replace(/application\//,'ap')+';'+s[1]).split(',')
+
+// Compress repeating characters in the second string
+t='', // this is the output/compressed string
+u=1, // this is the counter for the repeated characters
+o='' // this is the cache for the previous character
+// check for each character
+for (i of s[1]) {
+
+  // check if the previous character is the same as the current character
+  if(i==o)u++; // if it is, add 1 to the counter of that repeated character
+  else{ // if it isn't
+    u>1&&(t+=g(u)); // if there is a repeated character before, add the count to the output string
+    t+=i; // add the character to the output string
+    u=1 // reset the counter
+  }
+  o=i // store previous letter
+}
+u>0&&(t+=g(u)); // if the last character is a repeated character, add the count to the output string
+console.log(t) //test
+console.log(s) //test
+   */
+  c('o').value=s;
+  d('y')
+}
+}
+q.readAsDataURL(p)
+}}
+
+// output
+var b=()=>{
+// decompression algorithm
+var x=c('i').value
+
+w.download=Date.now()
+w.href=x
+w.click()
+}
+</script>
