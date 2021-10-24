@@ -160,7 +160,7 @@ Special characters |
 These characters are "reserved" and won't be used in converting Base64 characters.
 
 ## Step 0
-A sort-of 'version indentifier' for the compressed string so that old and new SFT decoders knows if the strings are compatible to them or not. Placed at the very first part of the string.
+A sort-of 'version identifier' for the compressed string so that old and new SFT decoders knows if the strings are compatible to them or not. Placed at the very first part of the string.
 
 **Current version: `1.0` <br>**
 **Character assigned to current version: `@`**
@@ -234,7 +234,7 @@ so, `AAAAAABCCCD` becomes `AüàBCüDD`.
 
 ```
 converted so far:
-@à/bmp;Qk1aAñàD4AöoAöCwAöcAöBAüEAññDñgAüwü4AñIAöCAö/üàwAñP8AüàbsAñCpAñBowAñQIAñGDAñà (59.15%)
+@àbmp;Qk1aAñàD4AöoAöCwAöcAöBAüEAññDñgAüwü4AñIAöCAö/üàwAñP8AüàbsAñCpAñBowAñQIAñGDAñà (58.45%)
 ```
 
 ### Part 2
